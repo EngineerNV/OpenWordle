@@ -1,4 +1,4 @@
-package block
+package game_board
 
 // Color of block like Wordle
 // Gray for bad letter,

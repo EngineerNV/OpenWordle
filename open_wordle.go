@@ -1,8 +1,8 @@
 package main
 
-import "fmt"
+import "OpenWordle/game_board"
 
 func main() {
-
-	fmt.Println("Hello, World!")
+	br := game_board.blockRow {}
+	br.fill_blocks("Red", "Light")
 }

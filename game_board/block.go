@@ -15,25 +15,25 @@ type boardBlock struct {
 }
 
 // Row of Blocks - 5 letter word
-type blockRow struct {
+type BlockRow struct {
 	col [4]boardBlock
 }
 
-func (br blockRow) fill_blocks(color string, word string) {
+func (br BlockRow) Fill_blocks(color string, word string) {
 	for i := 0; i < 5; i++ {
 		br.col[i].color = color
 		br.col[i].char = string(word[i])
 	}
 }
 
-func (br blockRow) fill_block(index int, color string, letter string) {
+func (br BlockRow) fill_block(index int, color string, letter string) {
 	br.col[index].color = color
 }
 
-func (br blockRow) checkGuess(ans string, guess string) bool {
+func (br BlockRow) checkGuess(ans string, guess string) bool {
 	perfectAnswer := true
 	if ans == guess {
-		br.fill_blocks("GREEN", guess)
+		br.Fill_blocks("GREEN", guess)
 		return perfectAnswer
 	}
 

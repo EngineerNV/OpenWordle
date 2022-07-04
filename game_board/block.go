@@ -10,13 +10,13 @@ package game_board
 // User has some letters right in their attempt
 // User has no letters right
 
-type boardBlock struct {
+type BoardBlock struct {
 	char, color string
 }
 
 // Row of Blocks - 5 letter word
 type BlockRow struct {
-	col [4]boardBlock
+	col [4]BoardBlock
 }
 
 func (br BlockRow) Fill_blocks(color string, word string) {
@@ -26,11 +26,11 @@ func (br BlockRow) Fill_blocks(color string, word string) {
 	}
 }
 
-func (br BlockRow) fill_block(index int, color string, letter string) {
+func (br BlockRow) Fill_block(index int, color string, letter string) {
 	br.col[index].color = color
 }
 
-func (br BlockRow) checkGuess(ans string, guess string) bool {
+func (br BlockRow) CheckGuess(ans string, guess string) bool {
 	perfectAnswer := true
 	if ans == guess {
 		br.Fill_blocks("GREEN", guess)
@@ -39,7 +39,7 @@ func (br BlockRow) checkGuess(ans string, guess string) bool {
 
 	for i := 0; i < 5; i++ {
 		if ans[i] == guess[i] { // Green find
-			br.fill_block(i, "GREEN", string(guess[i]))
+			br.Fill_block(i, "GREEN", string(guess[i]))
 		}
 	}
 	return false
